@@ -5,4 +5,8 @@ set(CMAKE_C_STANDARD 11)
 
 include_directories(.)
 
-add_executable(DiscreteMath shortestpath_algorithms.c)
+# Create separate executables for each source file
+add_executable(ShortestPathUndirectedWeighted shortestpath_algorithms_undirectedweightedgraph.c)
+add_executable(ShortestPathDirectedWeighted shortestpath_algorithms_directedweightedgraph.c)
+add_executable(ShortestPathUndirectedUnweighted shortestpath_algorithms_undirectedunweightedgraph.c)
+add_executable(ShortestPathDirectedUnweighted shortestpath_algorithms_directedunweightedgraph.c)
