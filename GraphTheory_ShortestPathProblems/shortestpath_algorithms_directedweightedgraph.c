@@ -152,7 +152,7 @@ void bellmanFord(const int graph[V][V], int start) {
 }
 
 int main() {
-    // Define the undirected weighted graph with edges and weights
+    // Define the directed weighted graph with edges and weights
     int graph[V][V] = {
             {0, 2, 0, 4, 0, 0, 0, 0, 0, 0},
             {0, 0, 3, 0, 0, 0, 0, 0, 0, 0},
