@@ -170,7 +170,7 @@ int main() {
     int goal = 9;
     for (int i = 0; i < V; i++) {
         int dx = abs(i - goal);
-        int dy = abs(goal - 9); // Assuming the goal is at vertex 6
+        int dy = abs(goal - 9); // Assuming the goal is at vertex 10
         heuristic[i] = dx + dy;
     }
 
