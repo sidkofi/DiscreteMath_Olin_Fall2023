@@ -3,15 +3,15 @@ import matplotlib.pyplot as plt
 
 # add graph
 graph = [
-    [0, 2, 0, 4, 0, 0, 0, 0, 0, 1],
-    [0, 0, 3, 0, 0, 0, 0, 0, 0, 0],
+    [0, 2, 0, 4, 0, 0, 0, 0, 0, 0],
+    [0, 0, 3, 0, 0, 0, 0, 5, 0, 0],
     [0, 0, 0, 1, 7, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 2, 5, 0, 0, 0, 0],
+    [0, 1, 0, 0, 2, 5, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 6, 4, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
+    [0, 0, 4, 0, 0, 0, 1, 0, 0, 0],
     [0, 0, 0, 0, 4, 0, 0, 7, 0, 0],
-    [0, 0, 0, 0, 0, 0, 7, 0, 0, 8],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
+    [0, 0, 0, 9, 0, 0, 7, 0, 0, 8],
+    [0, 0, 2, 0, 0, 0, 0, 0, 0, 9],
     [1, 0, 0, 0, 0, 0, 0, 8, 9, 0],
 ]
 G = nx.DiGraph()
@@ -32,7 +32,9 @@ layout = nx.spring_layout(G)
 plt.figure(figsize=(10, 10))
 pos = nx.spring_layout(G)
 edge_labels = {(i, j): graph[i][j] for i, j in G.edges()}
-nx.draw(
+
+
+nx.draw_networkx(
     G,
     pos,
     with_labels=True,
@@ -42,7 +44,11 @@ nx.draw(
     font_weight="bold",
     arrows=True,
 )
+path = nx.shortest_path(G, source=0, target=9)
+path_edges = list(zip(path, path[1:]))
+nx.draw_networkx_nodes(G, pos, nodelist=path, node_color="r")
+nx.draw_networkx_edges(G, pos, edgelist=path_edges, edge_color="r", width=4)
 
-# nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels)
+nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels)
 plt.title("Directed Weighted Graph")
 plt.show()
