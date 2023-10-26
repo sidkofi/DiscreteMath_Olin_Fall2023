@@ -152,18 +152,18 @@ void bellmanFord(const int graph[V][V], int start) {
 }
 
 int main() {
-    // Define the directed weighted graph with edges and weights
+    // Define the undirected weighted graph with edges and weights
     int graph[V][V] = {
-            {0, 2, 0, 4, 0, 0, 0, 0, 0, 0},
-            {0, 0, 3, 0, 0, 0, 0, 0, 0, 0},
+            {0, 2, 0, 4, 0, 0, 2, 0, 0, 0},
+            {0, 0, 3, 0, 0, 0, 0, 5, 0, 0},
             {0, 0, 0, 1, 7, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 2, 5, 0, 0, 0, 0},
+            {0, 1, 0, 0, 2, 5, 0, 0, 3, 0},
             {0, 0, 0, 0, 0, 6, 4, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
+            {0, 0, 4, 0, 0, 0, 1, 0, 0, 3},
             {0, 0, 0, 0, 4, 0, 0, 7, 0, 0},
-            {0, 0, 0, 0, 0, 0, 7, 0, 0, 8},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 9},
-            {1, 0, 0, 0, 0, 0, 0, 8, 9, 0}
+            {0, 0, 0, 9, 0, 0, 7, 0, 0, 8},
+            {0, 0, 2, 0, 0, 1, 0, 0, 0, 9},
+            {1, 0, 0, 0, 2, 0, 0, 8, 9, 0},
     };
 
     // Set your heuristic values for A* using Manhattan Distance

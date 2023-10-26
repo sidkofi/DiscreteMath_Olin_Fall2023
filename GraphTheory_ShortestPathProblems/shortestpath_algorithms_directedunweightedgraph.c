@@ -154,23 +154,23 @@ void bellmanFord(const int graph[V][V], int start) {
 int main() {
     // Define the undirected weighted graph with edges and weights
     int graph[V][V] = {
-            {0, 1, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 1, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 1, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 1, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 1, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 1, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 1, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+            {0, 1, 0, 1, 0, 1, 0, 0, 0, 0},
+            {0, 0, 1, 0, 0, 0, 0, 1, 0, 0},
+            {0, 0, 0, 1, 0, 1, 0, 0, 1, 0},
+            {1, 0, 0, 0, 1, 0, 0, 1, 0, 0},
+            {0, 0, 1, 0, 0, 1, 0, 0, 0, 1},
+            {0, 1, 0, 0, 0, 0, 1, 0, 0, 0},
+            {0, 0, 0, 0, 1, 0, 0, 1, 0, 0},
+            {0, 0, 0, 1, 0, 0, 1, 0, 1, 0},
+            {1, 1, 0, 0, 0, 0, 0, 0, 0, 1},
+            {0, 0, 1, 0, 0, 1, 0, 0, 0, 0},
     };
 
     // Set your heuristic values for A* using Manhattan Distance
     int goal = 9;
     for (int i = 0; i < V; i++) {
         int dx = abs(i - goal);
-        int dy = abs(goal - 9); // Assuming the goal is at vertex 10
+        int dy = abs(goal - 9); // Assuming the goal is at vertex 6
         heuristic[i] = dx + dy;
     }
 
