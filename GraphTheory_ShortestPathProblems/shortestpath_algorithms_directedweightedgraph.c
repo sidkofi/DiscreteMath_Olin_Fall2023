@@ -54,7 +54,6 @@ void dijkstra(const int graph[V][V], int start) {
     double dijkstra_runtime = (double)(end_time - start_time) / CLOCKS_PER_SEC;
     printf("Dijkstra's Runtime: %.3f ms\n", dijkstra_runtime*1000);
 
-    // Dijkstra's has O(V^2) time complexity for this implementation and O(V) space complexity.
 }
 
 // A* Search Algorithm
@@ -148,7 +147,6 @@ void bellmanFord(const int graph[V][V], int start) {
     double bellmanford_runtime = (double)(end_time - start_time) / CLOCKS_PER_SEC;
     printf("Bellman-Ford Runtime: %.3f ms\n", bellmanford_runtime*1000);
 
-    // Bellman-Ford has O(V^2) time complexity for this implementation and O(V) space complexity.
 }
 
 int main() {
@@ -170,7 +168,7 @@ int main() {
     int goal = 9;
     for (int i = 0; i < V; i++) {
         int dx = abs(i - goal);
-        int dy = abs(goal - 9); // Assuming the goal is at vertex 6
+        int dy = abs(goal - 9); // Assuming the goal is at vertex 9
         heuristic[i] = dx + dy;
     }
 
